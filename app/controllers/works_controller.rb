@@ -7,6 +7,23 @@ class WorksController < ApplicationController
     @work_item = Work.new
   end
 
+  def edit
+    @work_item = Work.find(params[:id])
+  end
+
+  def update
+    @work_item = Work.find(params[:id])
+    respond_to do |format|
+      if @work_item.update(work_params)
+        format.html { redirect_to works_path, notice: 'Portfolio piece was successfully updated.' }
+        format.json { render :show, status: :ok, location: @work }
+      else
+        format.html { render :edit }
+        format.json { render json: @work.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def create
     @work_item = Work.new(work_params)
 
