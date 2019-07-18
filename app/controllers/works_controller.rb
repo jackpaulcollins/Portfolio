@@ -7,6 +7,10 @@ class WorksController < ApplicationController
     @work_item = Work.new
   end
 
+  def show
+    @work_item = Work.find(params[:id])
+  end
+
   def edit
     @work_item = Work.find(params[:id])
   end
