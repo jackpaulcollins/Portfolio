@@ -1,8 +1,11 @@
 <h1>Portfolio Items</h1>
 
+<%= link_to "Create New Item", new_work_path %>
+
 <% @work_items.each do |work_item| %>
   <h2> <%= work_item.title %> </h2>
   <p> <%= work_item.subtitle %> </p>
   <p> <%= work_item.body %> </p>
-  <%= image_tag work_item.thumb_image unless work_item.thumb_image.nil?  %> 
+  <%= image_tag work_item.thumb_image unless work_item.thumb_image.nil?  %>
+  <%= link_to "Edit", edit_work_path(work_item.id) %>
 <% end %>
