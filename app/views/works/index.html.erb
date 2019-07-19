@@ -8,4 +8,5 @@
   <p> <%= work_item.body %> </p>
   <%= image_tag work_item.thumb_image unless work_item.thumb_image.nil?  %>
   <%= link_to "Edit", edit_work_path(work_item.id) %>
+  <%= link_to "Delete", destroy_work_path(work_item.id) %>
 <% end %>
