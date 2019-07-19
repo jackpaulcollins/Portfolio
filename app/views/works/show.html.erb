@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<%= image_tag @work_item.main_image unless @work_item.main_image.nil?  %>
+
+<h1>Title: <%= @work_item.title %></h1>
+
+<em><%= @work_item.subtitle %></em>
+
+<p>
+  <%= @work_item.body %>
+</p>
+
+<%= link_to 'Edit', edit_work_path(@work_item) %> |
+<%= link_to 'Back', works_path %>
