@@ -5,6 +5,10 @@ class WorksController < ApplicationController
     @work_items = Work.all
   end
 
+  def react
+    @react_work_items = Work.react
+  end
+
   def show
   end
 
