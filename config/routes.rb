@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :works, except: [:show]
+  get 'react-items', to: 'works#react'
   get 'work/:id', to: 'works#show', as: 'work_show'
 
   get 'about-me', to: 'pages#about'
