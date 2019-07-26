@@ -10,5 +10,11 @@
   <%= @work_item.body %>
 </p>
 
-<%= link_to 'Edit', edit_work_path(@work_item) %> |
+<h2>Technologies Used:</h2>
+
+<%= @work_item.technologies.each do |t| %>
+<p><%= t.name %></p>
+<% end %>
+
+<%= link_to 'Edit', edit_work_path(@work_item) %>
 <%= link_to 'Back', works_path %>

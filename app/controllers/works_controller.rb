@@ -14,6 +14,7 @@ class WorksController < ApplicationController
 
   def new
     @work_item = Work.new
+    3.times { @work_item.technologies.build }
   end
 
   def edit
@@ -55,7 +56,8 @@ class WorksController < ApplicationController
   end
 
   def work_params
-    params.require(:work).permit(:title, :subtitle, :body)
+    params.require(:work).permit(:title, :subtitle, :body,
+                                  technologies_attributes: [:name])
   end
 end
 
