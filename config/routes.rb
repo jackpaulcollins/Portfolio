@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :works, except: [:show]
   get 'react-items', to: 'works#react'
   get 'work/:id', to: 'works#show', as: 'work_show'
