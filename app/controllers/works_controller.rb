@@ -55,9 +55,14 @@ class WorksController < ApplicationController
     @work_item = Work.find(params[:id])
   end
 
+  private
+
   def work_params
-    params.require(:work).permit(:title, :subtitle, :body,
-                                  technologies_attributes: [:name])
+    params.require(:work).permit(:title, 
+                                 :subtitle, 
+                                 :body,
+                                 technologies_attributes: [:name]
+                                )
   end
 end
 
